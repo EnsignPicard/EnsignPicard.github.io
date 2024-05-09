@@ -1522,16 +1522,6 @@ ul.bullet {
     background-position: center center;
     background-repeat: no-repeat;
 }
-/* For wider screens */
-@media screen and (min-width: 768px) {
-  .family p {
-    text-align: justify; /* Justify the text */
-    text-justify: inter-word; /* Inter-word justification for better spacing */
-    width: 100%; /* Make paragraphs stretch across the screen */
-    margin: 0; /* Remove default margin */
-  }
-}
-
 
 /* For mobile devices */
 @media screen and (max-width: 767px) {
@@ -1574,7 +1564,5 @@ ul.bullet {
   .family p {
     text-align: justify; /* Justify the text */
     text-justify: inter-word; /* Inter-word justification for better spacing */
-
-
   }
 }
