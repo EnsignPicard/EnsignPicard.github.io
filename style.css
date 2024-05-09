@@ -1528,3 +1528,20 @@ ul.bullet {
     background-position: calc(50% - 200px) center !important;
   }
 }
+
+@media screen and (max-width: 767px) {
+  iframe {
+      width: 100%;
+      height: auto;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .row {
+      flex-wrap: wrap;
+  }
+
+  .col-md-4 {
+      width: 100%;
+  }
+}
