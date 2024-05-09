@@ -1549,4 +1549,10 @@ ul.bullet {
     width: 100%;
   }
 
-  
+}
+
+/* Adjust iframe height */
+.col-md-4 iframe {
+  width: 100%;
+  height: 300px; /* Adjust the height as needed */
+}
