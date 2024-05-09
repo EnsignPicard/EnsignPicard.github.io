@@ -1545,3 +1545,16 @@ ul.bullet {
       font-size: 24px; /* Adjust font size for smaller screens */
   }
 }
+@media screen and (min-width: 768px) {
+  .family p {
+    text-align: justify; /* Justify the text */
+    text-justify: inter-word; /* Inter-word justification for better spacing */
+  }
+}
+
+/* For mobile devices */
+@media screen and (max-width: 767px) {
+  .family p {
+    text-align: left; /* Reset text alignment for smaller screens */
+  }
+}
