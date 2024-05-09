@@ -1531,8 +1531,7 @@ ul.bullet {
     margin: 0; /* Remove default margin */
   }
 }
-background-repeat: no-repeat;
-}
+
 
 /* For mobile devices */
 @media screen and (max-width: 767px) {
