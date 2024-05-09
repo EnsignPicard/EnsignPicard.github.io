@@ -1566,3 +1566,13 @@ ul.bullet {
     text-justify: inter-word; /* Inter-word justification for better spacing */
   }
 }
+
+.container {
+  white-space: nowrap;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+      white-space: normal; /* Reset white-space for mobile devices */
+  }
+}
