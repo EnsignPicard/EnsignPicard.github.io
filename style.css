@@ -1584,3 +1584,25 @@ ul.bullet {
     white-space: nowrap; /* Prevent the text from breaking onto a new line */
   }
 }
+.page-head {
+  background-size: cover;
+  padding: 50px;
+  text-align: center;
+}
+
+.page-head .page-title {
+  font-weight: 100;
+  font-size: 72px;
+  font-size: 5.1428571429em;
+  margin-bottom: 0;
+  color: white;
+  word-break: break-word;
+}
+
+@media screen and (max-width: 640px) {
+  .page-head .page-title {
+    font-size: 48px;
+    font-size: 3.4285714286em;
+    white-space: nowrap; /* Prevents text from wrapping */
+  }
+}
