@@ -1576,3 +1576,11 @@ ul.bullet {
       white-space: normal; /* Reset white-space for mobile devices */
   }
 }
+@media only screen and (max-width: 600px) {
+  .container {
+    white-space: normal; /* Reset white-space for mobile devices */
+  }
+  .page-title {
+    white-space: nowrap; /* Prevent the text from breaking onto a new line */
+  }
+}
