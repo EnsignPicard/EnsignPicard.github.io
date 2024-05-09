@@ -1614,10 +1614,5 @@ ul.bullet {
     padding: 10px 0; /* Add padding for better spacing */
   }
 }
-.row {
-  max-width: 100%;
-  padding: 0 20px; /* optional padding */
-  margin: 0 auto; /* center the container */
-}
 
 
