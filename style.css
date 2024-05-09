@@ -1620,19 +1620,4 @@ ul.bullet {
   margin: 0 auto; /* center the container */
 }
 
-/* For mobile devices */
-@media screen and (max-width: 767px) {
-  .content p {
-    font-size: 16px; /* Adjust font size for smaller screens */
-    text-align: justify; /* Justify the text */
-  }
-}
 
-/* For wider screens */
-@media screen and (min-width: 768px) {
-  .content p {
-    font-size: 18px; /* Adjust font size for bigger screens */
-    text-align: justify; /* Justify the text */
-    max-width: 100%; /* Ensure text doesn't go wider than the screen */
-  }
-}
