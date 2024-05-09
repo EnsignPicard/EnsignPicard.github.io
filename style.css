@@ -1545,3 +1545,9 @@ ul.bullet {
       width: 100%;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .site-title {
+      font-size: 24px; /* Adjust font size for smaller screens */
+  }
+}
