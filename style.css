@@ -1606,3 +1606,11 @@ ul.bullet {
     white-space: nowrap; /* Prevents text from wrapping */
   }
 }
+
+@media (max-width: 767px) {
+  .page-title {
+    font-size: 24px; /* Adjust font size for smaller screens */
+    margin: 0; /* Remove any default margin */
+    padding: 10px 0; /* Add padding for better spacing */
+  }
+}
