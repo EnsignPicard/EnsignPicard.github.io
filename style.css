@@ -1524,7 +1524,7 @@ ul.bullet {
 }
 
 @media (max-width: 767px) {
-  .hero .slides li {
-    background-position: calc(50% - 100px) center !important;
+  .hero .slides li:first-child {
+    background-position: calc(50% - 200px) center !important;
   }
 }
