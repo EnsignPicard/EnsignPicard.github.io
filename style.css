@@ -1575,5 +1575,7 @@ background-repeat: no-repeat;
   .family p {
     text-align: justify; /* Justify the text */
     text-justify: inter-word; /* Inter-word justification for better spacing */
+
+
   }
 }
