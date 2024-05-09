@@ -1522,47 +1522,12 @@ ul.bullet {
     background-position: center center;
     background-repeat: no-repeat;
 }
-
-/* For mobile devices */
-@media screen and (max-width: 767px) {
-  .hero .slides li:first-child {
-    background-position: calc(50% - 250px) center !important;
-  }
-
-  .row {
-    flex-wrap: wrap;
-  }
-
-  .col-md-4 {
-    width: 100%;
-  }
-
-/* For mobile devices */
-@media screen and (max-width: 767px) {
-  .page-title {
-    font-size: 20px; /* Adjust font size for smaller screens */
-  }
-}
-
-
-  .col-md-4 {
-    width: 100%;
-  }
-
-  .col-md-4 iframe {
-    width: 100%;
-    height: 300px; /* Adjust the height as needed */
-  }
-
-  .family p {
-    text-align: left; /* Reset text alignment for smaller screens */
-  }
-}
-
 /* For wider screens */
 @media screen and (min-width: 768px) {
   .family p {
     text-align: justify; /* Justify the text */
     text-justify: inter-word; /* Inter-word justification for better spacing */
+    width: 100%; /* Make paragraphs stretch across the screen */
+    margin: 0; /* Remove default margin */
   }
 }
