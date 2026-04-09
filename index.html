@@ -192,6 +192,7 @@
     #ss-chat-send:disabled{background:#2a4a35;cursor:not-allowed}
     #ss-chat-send svg{width:14px;height:14px;fill:#000}
     .ss-chat-disclaimer{padding:0.35rem 0.7rem 0.45rem;font-size:0.67rem;color:var(--muted2);text-align:center;flex-shrink:0}
+    #privacy-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:1000;align-items:center;justify-content:center;padding:1rem}
     #privacy-modal.open{display:flex}
     .privacy-box{background:#0f140f;border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:2rem;max-width:480px;width:100%;position:relative}
     .privacy-box h3{font-size:1rem;font-weight:700;margin-bottom:1rem}
@@ -254,18 +255,6 @@
     .skill-progress-bar-bg{height:4px;background:rgba(255,255,255,0.05);border-radius:2px;overflow:hidden}
     .skill-progress-bar{height:100%;background:var(--green);border-radius:2px}
     .skill-progress-note{font-size:0.75rem;color:var(--muted);margin-top:0.5rem}
-
-    /* ── TESTIMONIALS ── */
-    .testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem;margin-top:2.5rem}
-    .testimonial-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.75rem;display:flex;flex-direction:column;gap:1rem;transition:border-color 0.2s}
-    .testimonial-card:hover{border-color:var(--green-border)}
-    .testimonial-quote{font-size:0.88rem;color:#bbb;line-height:1.7;font-style:italic;flex:1}
-    .testimonial-quote::before{content:'\201C';color:var(--green);font-size:1.5rem;font-style:normal;display:block;margin-bottom:0.25rem}
-    .testimonial-author{display:flex;align-items:center;gap:0.75rem}
-    .testimonial-avatar{width:38px;height:38px;border-radius:50%;background:var(--green-dim);border:1px solid var(--green-border);display:flex;align-items:center;justify-content:center;font-size:0.85rem;font-weight:700;color:var(--green);flex-shrink:0}
-    .testimonial-name{font-size:0.85rem;font-weight:700}
-    .testimonial-role{font-size:0.75rem;color:var(--muted);font-family:var(--mono)}
-    .testimonial-placeholder{border:1px dashed rgba(255,255,255,0.08);border-radius:14px;padding:1.75rem;text-align:center;color:var(--muted);font-size:0.83rem;line-height:1.6}
     .testimonial-placeholder strong{display:block;color:var(--text);margin-bottom:0.35rem;font-size:0.88rem}
 
     /* ── BLOG / NOTES ── */
@@ -302,6 +291,7 @@
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
     <li><a href="#notes">Notes</a></li>
     <li><a href="#contact" class="nav-cta">Contact</a></li>
   </ul>
@@ -719,32 +709,6 @@
   </div>
 </section>
 
-<hr class="divider">
-
-<!-- TESTIMONIALS -->
-<section id="testimonials">
-  <span class="label">What others say</span>
-  <h2>References & <em>testimonials</em></h2>
-  <p class="lead">Professional references available on request. If you worked with me and would like to add a testimonial, get in touch.</p>
-  <div class="testimonials-grid">
-
-    <div class="testimonial-placeholder">
-      <strong>SnapCore colleague or manager</strong>
-      Reach out to a former colleague at SnapCore and ask for a short quote about your tool work. Even one sentence like "Jesse built tools that saved us hours every week" carries real weight. Add it here by replacing this block with a .testimonial-card.
-    </div>
-
-    <div class="testimonial-placeholder">
-      <strong>Massey University supervisor or lecturer</strong>
-      A short note from a lecturer whose paper you got A+ in — especially AI or Mobile Dev — would be valuable for tech roles. Email them and ask.
-    </div>
-
-    <div class="testimonial-placeholder">
-      <strong>SouthStack client</strong>
-      Once you complete your first client project, ask for a testimonial. Add it here.
-    </div>
-
-  </div>
-</section>
 
 <hr class="divider">
 
