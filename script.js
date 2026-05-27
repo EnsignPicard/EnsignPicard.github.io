@@ -1,4 +1,3 @@
-
 // NOTES TOGGLE
 function toggleNote(card) {
   const expand = card.querySelector('.note-expand');
