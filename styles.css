@@ -253,3 +253,33 @@
     .uni-highlight-card p{font-size:0.8rem;color:var(--muted);line-height:1.55}
     .uni-stack{display:flex;flex-wrap:wrap;gap:0.3rem;margin-top:0.6rem}
     .uni-stack span{font-family:var(--mono);font-size:0.65rem;padding:0.1rem 0.45rem;background:var(--surface2);border:1px solid var(--border);border-radius:3px;color:var(--muted)}
+
+/* === Add to styles.css === */
+/* Styling for inline project demo videos */
+
+.project-video {
+  margin-top: 1rem;
+}
+
+.project-video video {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: #000;
+  display: block;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.project-video video[poster] {
+  object-fit: cover;
+}
+
+/* Make the primary project CTA (e.g. live demo) stand out */
+.project-link-primary {
+  font-weight: 600;
+  color: var(--green) !important;
+}
+.project-link-primary:hover {
+  text-decoration: underline;
+}
