@@ -48,7 +48,7 @@
   <div class="hero-text">
     <span class="label">Available for work</span>
     <h1>Jesse<br><em>Jacobs</em></h1>
-    <p class="terminal-line">software_dev && founder</p>
+    <p class="terminal-line">software developer</p>
     <p class="lead">CS graduate and AWS certified developer based in Rolleston, NZ. Two years building production tools at a hardware startup. Founder of SouthStack.</p>
 
     <div class="hero-badges">
@@ -404,17 +404,6 @@
       <p class="skill-progress-note">Building on strong Java foundations. Working through a dedicated Spring Boot course.</p>
     </div>
 
-
-
-    <div class="skill-progress-item">
-      <div class="skill-progress-header">
-        <span class="skill-progress-name">NLP / Transfer Learning</span>
-        <span class="skill-progress-status status-planned">Planned</span>
-      </div>
-      <div class="skill-progress-bar-bg"><div class="skill-progress-bar" style="width:15%"></div></div>
-      <p class="skill-progress-note">Foundations from AI paper. Planning to go deeper through Kaggle NLP competitions.</p>
-    </div>
-
   </div>
 </section>
 
@@ -440,45 +429,6 @@
   <div id="blog-error" style="display:none;color:var(--muted);font-size:0.85rem;margin-top:2rem;padding:1rem;background:var(--surface);border:1px solid var(--border);border-radius:8px"></div>
   <div class="notes-grid" id="blog-grid" style="display:none"></div>
 
-  <!-- FALLBACK POSTS — shown if Sanity isn't set up yet -->
-  <div class="notes-grid" id="blog-fallback">
-    <div class="note-card" onclick="toggleNote(this)">
-      <span class="note-tag">RAG / AI</span>
-      <h3>How I built a RAG chatbot for a static website</h3>
-      <p>No vector database needed — the entire knowledge base fits in a system prompt. What I learned building the SouthStack and portfolio chatbots.</p>
-      <div class="note-expand">
-        <p>When people talk about RAG they usually picture a vector database, embeddings, and a complex pipeline. For small-to-medium knowledge bases, none of that is needed.</p>
-        <p style="margin-top:0.75rem">For both SouthStack and my portfolio the "RAG" is just: write a well-structured text file with everything the bot should know, paste it into the system prompt, and let Claude figure out what's relevant. Works fine up to ~50-100KB of text.</p>
-        <p style="margin-top:0.75rem">The trickier part was API key security. GitHub Pages can't store secrets, so I built a Cloudflare Worker proxy — 30 lines of JS that sits between the browser and Anthropic's API, reads the key from an environment variable, and forwards the request. Free tier covers 100k requests/day.</p>
-        <p style="margin-top:0.75rem">When you'd actually need a vector DB: hundreds of PDFs, a full documentation site, or a product catalogue with thousands of items. At that point Supabase pgvector or GCP Vertex AI Search become worth the complexity.</p>
-      </div>
-      <span class="note-read-more">Read more ↓</span>
-    </div>
-
-    <div class="note-card" onclick="toggleNote(this)">
-      <span class="note-tag">Embedded Systems</span>
-      <h3>Modbus RTU over serial — lessons from building a sensor interface</h3>
-      <p>Building a C++/Qt app to talk to industrial turbidity sensors taught me more about serial communication than any tutorial.</p>
-      <div class="note-expand">
-        <p>Modbus RTU is a serial protocol used in industrial sensors and PLCs. Simple in concept — master sends a request, slave responds — but getting it working reliably has a few gotchas.</p>
-        <p style="margin-top:0.75rem">The biggest issue was baud rate mismatch. Yosemitech Y510 sensors default to 9600 baud but the docs weren't clear. Getting libmodbus to connect required matching the baud rate exactly in modbus_new_rtu().</p>
-        <p style="margin-top:0.75rem">Cross-platform serial port handling in Qt was fiddlier than expected — Windows uses COM3 style names while Linux uses /dev/ttyUSB0. QSerialPort handles this but you need to enumerate available ports at runtime.</p>
-      </div>
-      <span class="note-read-more">Read more ↓</span>
-    </div>
-
-    <div class="note-card" onclick="toggleNote(this)">
-      <span class="note-tag">Android</span>
-      <h3>Jetpack Compose for Modbus — modern Android meets industrial protocols</h3>
-      <p>Why use a declarative UI framework for an app that reads sensor data? Because the code is dramatically cleaner.</p>
-      <div class="note-expand">
-        <p>The traditional View-based approach for a live-updating sensor display means ViewModels, LiveData, RecyclerViews, and a lot of boilerplate. With Compose the entire sensor reading UI is maybe 60 lines.</p>
-        <p style="margin-top:0.75rem">A State object holds the current readings, a coroutine polls the sensor every 2 seconds, and the UI recomposes automatically. No notifyDataSetChanged(), no adapter pattern.</p>
-        <p style="margin-top:0.75rem">The Bluetooth/USB serial piece was harder — Android's USB Host API is verbose and the permissions model needs careful handling. The Modbus protocol itself runs fine over a USB-to-serial adapter using usb-serial-for-android.</p>
-      </div>
-      <span class="note-read-more">Read more ↓</span>
-    </div>
-  </div>
 </section>
 
 <hr class="divider">
