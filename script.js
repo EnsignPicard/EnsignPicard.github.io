@@ -97,7 +97,7 @@ async function loadSanityPosts() {
 loadSanityPosts();
 
 // CHATBOT
-const WORKER_URL = 'https://jesse-portfolio-rag.jessejjacobs93.workers.dev';
+const WORKER_URL = 'https://jessejacobs.nz/api/chat';
 
 (function() {
   var history = [];
