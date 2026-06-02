@@ -1,11 +1,3 @@
-// NOTES TOGGLE
-function toggleNote(card) {
-  const expand = card.querySelector('.note-expand');
-  const readMore = card.querySelector('.note-read-more');
-  const isOpen = expand.classList.toggle('open');
-  readMore.textContent = isOpen ? 'Close ↑' : 'Read more ↓';
-}
-
 // NAV
 const navToggle = document.getElementById('nav-toggle');
 const navLinks = document.getElementById('nav-links');
@@ -33,58 +25,78 @@ function closeLightbox() {
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 
 // ── SANITY BLOG ──────────────────────────────────────────────────────────
-// Replace YOUR_PROJECT_ID with your Sanity project ID once set up.
-// Until then the fallback static posts show automatically.
 const SANITY_PROJECT_ID = '29y7wn06';
-const SANITY_DATASET = 'production'; // your dataset name - 'production' is the default
+const SANITY_DATASET = 'production';
+
+function showBlogMessage(text) {
+  var loading = document.getElementById('blog-loading');
+  var error = document.getElementById('blog-error');
+  var grid = document.getElementById('blog-grid');
+  if (loading) loading.style.display = 'none';
+  if (grid) grid.style.display = 'none';
+  if (error) {
+    error.style.display = 'block';
+    error.textContent = text;
+  }
+}
 
 async function loadSanityPosts() {
-  if (SANITY_PROJECT_ID === 'UNCONFIGURED') {
-    document.getElementById('blog-loading').style.display = 'none';
-    document.getElementById('blog-fallback').style.display = 'grid';
-    return;
-  }
   var query = encodeURIComponent('*[_type == "post"] | order(publishedAt desc) [0...6] {title, slug, excerpt, publishedAt, "tags": categories[]->title}');
-  var url = 'https://' + SANITY_PROJECT_ID + '.api.sanity.io/v2021-10-21/data/query/' + SANITY_DATASET + '?query=' + query;
+  var url = 'https://' + SANITY_PROJECT_ID + '.apicdn.sanity.io/v2021-10-21/data/query/' + SANITY_DATASET + '?query=' + query;
   try {
     var res = await fetch(url);
+    if (!res.ok) throw new Error('HTTP ' + res.status);
     var data = await res.json();
     var posts = data.result;
+
     if (!posts || posts.length === 0) {
-      document.getElementById('blog-loading').style.display = 'none';
-      document.getElementById('blog-fallback').style.display = 'grid';
+      showBlogMessage('No posts yet — check back soon.');
       return;
     }
+
     var grid = document.getElementById('blog-grid');
-    grid.innerHTML = posts.map(function(post) {
-      var date = post.publishedAt ? new Date(post.publishedAt).toLocaleDateString('en-NZ', {year:'numeric',month:'short',day:'numeric'}) : '';
-      var tag = post.tags && post.tags[0] ? post.tags[0] : 'Note';
-      return '<div class="note-card"><span class="note-tag">' + tag + '</span><h3>' + post.title + '</h3><p>' + (post.excerpt || '') + '</p><p class="note-date">' + date + '</p></div>';
-    }).join('');
+    grid.innerHTML = '';
+
+    posts.forEach(function(post) {
+      var card = document.createElement('div');
+      card.className = 'note-card';
+
+      var dateStr = post.publishedAt
+        ? new Date(post.publishedAt).toLocaleDateString('en-NZ', {year:'numeric', month:'short', day:'numeric'})
+        : '';
+      var tag = (post.tags && post.tags[0]) ? post.tags[0] : 'Note';
+
+      var tagEl = document.createElement('span');
+      tagEl.className = 'note-tag';
+      tagEl.textContent = tag;
+
+      var titleEl = document.createElement('h3');
+      titleEl.textContent = post.title || 'Untitled';
+
+      var excerptEl = document.createElement('p');
+      excerptEl.textContent = post.excerpt || '';
+
+      var dateEl = document.createElement('p');
+      dateEl.className = 'note-date';
+      dateEl.textContent = dateStr;
+
+      card.appendChild(tagEl);
+      card.appendChild(titleEl);
+      card.appendChild(excerptEl);
+      card.appendChild(dateEl);
+      grid.appendChild(card);
+    });
+
     document.getElementById('blog-loading').style.display = 'none';
-    document.getElementById('blog-fallback').style.display = 'none';
+    document.getElementById('blog-error').style.display = 'none';
     grid.style.display = 'grid';
   } catch (err) {
-    document.getElementById('blog-loading').style.display = 'none';
-    document.getElementById('blog-error').style.display = 'block';
-    document.getElementById('blog-error').textContent = 'Could not load posts.';
-    document.getElementById('blog-fallback').style.display = 'grid';
+    showBlogMessage('Could not load posts right now.');
   }
 }
 loadSanityPosts();
 
-// EMAIL OBFUSCATION
-(function() {
-  var c = [106,101,115,115,101,106,97,99,111,98,115,49,50,54,64,103,109,97,105,108,46,99,111,109];
-  var e = c.map(n => String.fromCharCode(n)).join('');
-  var m = 'mai'+'lto:'+e;
-  document.querySelectorAll('[data-protect-email]').forEach(el => el.href = m);
-  document.querySelectorAll('[data-protect-email-text]').forEach(el => el.textContent = e);
-})();
-
 // CHATBOT
-// ⚠️  REPLACE THIS URL WITH YOUR CLOUDFLARE WORKER URL BEFORE DEPLOYING
-// Instructions in cloudflare-worker.js
 const WORKER_URL = 'https://jesse-portfolio-rag.jessejjacobs93.workers.dev';
 
 (function() {
