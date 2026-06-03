@@ -19,7 +19,7 @@
       --bg:#080c08; --surface:#0f140f; --surface2:#141a14;
       --border:rgba(255,255,255,0.06); --green:#4caf7d;
       --green-dim:rgba(76,175,125,0.10); --green-border:rgba(76,175,125,0.22);
-      --text:#f0f4f0; --muted:#5a6b5a; --muted2:#3a483a;
+      --text:#f0f4f0; --muted:#8a9a8a; --muted2:#6a7a6a;
       --mono:'DM Mono',monospace; --sans:'Sora',sans-serif;
     }
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
@@ -82,7 +82,7 @@
     /* SKILLS */
     .skills-groups{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.25rem;margin-top:2.5rem}
     .skill-group{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.25rem 1.5rem}
-    .skill-group h4{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--green);margin-bottom:0.85rem}
+    .skill-group h3{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--green);margin-bottom:0.85rem}
     .skill-tags{display:flex;flex-wrap:wrap;gap:0.4rem}
     .skill-tag{font-size:0.78rem;padding:0.2rem 0.55rem;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:4px;color:var(--muted);font-family:var(--mono)}
 
@@ -123,7 +123,7 @@
     /* EDUCATION */
     .edu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin-top:2.5rem}
     .edu-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.5rem}
-    .edu-card h4{font-size:0.95rem;font-weight:700;margin-bottom:0.25rem}
+    .edu-card h3{font-size:0.95rem;font-weight:700;margin-bottom:0.25rem}
     .edu-inst{font-family:var(--mono);font-size:0.75rem;color:var(--green);margin-bottom:0.5rem}
     .edu-year{font-family:var(--mono);font-size:0.72rem;color:var(--muted)}
 
@@ -300,3 +300,6 @@
 .project-link-primary:hover {
   text-decoration: underline;
 }
+
+    /* Accessibility: inline text links are underlined (not distinguished by colour alone) */
+    .project-link, .note-read-more, .lead a, .github-graph-wrap p a, .github-note a, .privacy-box a { text-decoration: underline; }
