@@ -1,3 +1,20 @@
+@import "tailwindcss";
+
+/* Brand design tokens exposed to Tailwind v4 utilities. Mirrors :root below. */
+@theme {
+  --color-bg: #080c08;
+  --color-surface: #0f140f;
+  --color-surface2: #141a14;
+  --color-green: #4caf7d;
+  --color-text: #f0f4f0;
+  --color-muted: #5a6b5a;
+  --font-mono: 'DM Mono', monospace;
+  --font-sans: 'Sora', sans-serif;
+}
+
+/* ============================================================
+   Original portfolio styles — ported intact.
+   ============================================================ */
 :root {
       --bg:#080c08; --surface:#0f140f; --surface2:#141a14;
       --border:rgba(255,255,255,0.06); --green:#4caf7d;

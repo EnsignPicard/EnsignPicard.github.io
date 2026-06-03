@@ -1,49 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jesse Jacobs — Software Developer, NZ · Open to Work</title>
-  <meta name="description" content="Software developer in Rolleston, NZ. Two years building production software at an IoT hardware startup — Java, Kotlin/Android, backend integrations, automation. AWS Certified, GradDip Computer Science. Open to new roles.">
-  <link rel="canonical" href="https://jessejacobs.nz/">
-  <meta name="theme-color" content="#080c08">
-  <meta property="og:title" content="Jesse Jacobs — Software Developer, NZ · Open to Work">
-  <meta property="og:description" content="Software developer in Rolleston, NZ. Two years building production software at an IoT hardware startup — Java, Kotlin/Android, backend integrations, automation. AWS Certified, GradDip Computer Science. Open to new roles.">
-  <meta property="og:image" content="https://jessejacobs.nz/og-image.png">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://jessejacobs.nz/">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<div class="page">
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import Chatbot from '../components/Chatbot.astro';
+import PrivacyModal from '../components/PrivacyModal.astro';
+import Lightbox from '../components/Lightbox.astro';
+---
+<Base>
+  <Nav />
 
-<nav>
-  <a href="#" class="nav-name">jesse.jacobs</a>
-  <ul class="nav-links" id="nav-links">
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#building">Building</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#notes">Notes</a></li>
-    <li><a href="#contact" class="nav-cta">Contact</a></li>
-  </ul>
-  <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-
-<!-- HERO -->
 <div class="hero" id="home">
   <div class="hero-text">
     <span class="label">Available for work</span>
@@ -64,7 +29,7 @@
     </div>
   </div>
   <div class="hero-photo">
-    <img src="images/image_1.jpg" alt="Jesse Jacobs">
+    <img src="/images/image_1.jpg" alt="Jesse Jacobs">
   </div>
 </div>
 
@@ -82,14 +47,14 @@
       <p>Internal platform developed to automate manufacturing, testing, CRM integration, and device lifecycle management for an IoT monitoring company. Automated CRM onboarding, return-processing reports, sensor dashboards, and Bluetooth provisioning workflows. Native installer via JPackage with automated updates via GitHub Actions.</p>
       <div class="project-stack"><span>Java</span><span>GraphQL</span><span>Monday.com API</span><span>GitHub Actions</span><span>java-dbus</span><span>JPackage</span></div>
       <div class="project-gallery">
-        <img src="images/image_2.jpg" alt="AquaWatch dashboard" onclick="openLightbox(this)">
-        <img src="images/image_3.jpg" alt="AquaWatch device management" onclick="openLightbox(this)">
-        <img src="images/image_4.jpg" alt="AquaWatch graphing tool" onclick="openLightbox(this)">
+        <img src="/images/image_2.jpg" alt="AquaWatch dashboard">
+        <img src="/images/image_3.jpg" alt="AquaWatch device management">
+        <img src="/images/image_4.jpg" alt="AquaWatch graphing tool">
       </div>
       <div class="project-video">
-        <video controls preload="metadata" poster="images/image_2.jpg" playsinline>
-          <source src="videos/aquawatch-demo.mp4" type="video/mp4">
-          Your browser doesn't support embedded video. <a href="videos/aquawatch-demo.mp4">Download the demo</a>.
+        <video controls preload="metadata" poster="/images/image_2.jpg" playsinline>
+          <source src="/videos/aquawatch-demo.mp4" type="video/mp4">
+          Your browser doesn't support embedded video. <a href="/videos/aquawatch-demo.mp4">Download the demo</a>.
         </video>
       </div>
     </div>
@@ -100,12 +65,12 @@
       <p>Digital twin for SnapCore water quality testing tanks. Displays real-time sensor data with automatic 15-minute refresh and tank-by-tank navigation.</p>
       <div class="project-stack"><span>Java</span><span>Real-time data</span><span>Sensor APIs</span></div>
       <div class="project-gallery">
-        <img src="images/image_5.jpg" alt="Digital twin sensor visualisation" onclick="openLightbox(this)">
+        <img src="/images/image_5.jpg" alt="Digital twin sensor visualisation">
       </div>
       <div class="project-video">
-        <video controls preload="metadata" poster="images/image_5.jpg" playsinline>
-          <source src="videos/digital-twin-demo.mp4" type="video/mp4">
-          Your browser doesn't support embedded video. <a href="videos/digital-twin-demo.mp4">Download the demo</a>.
+        <video controls preload="metadata" poster="/images/image_5.jpg" playsinline>
+          <source src="/videos/digital-twin-demo.mp4" type="video/mp4">
+          Your browser doesn't support embedded video. <a href="/videos/digital-twin-demo.mp4">Download the demo</a>.
         </video>
       </div>
     </div>
@@ -116,7 +81,7 @@
       <p>Cross-platform desktop app for Yosemitech Y510 turbidity sensors. Real-time Modbus RTU over serial. Qt GUI. Runs on Linux and Windows.</p>
       <div class="project-stack"><span>C++</span><span>Qt Framework</span><span>libmodbus</span><span>CMake</span><span>Modbus RTU</span></div>
       <div class="project-gallery">
-        <img src="images/image_6.jpg" alt="Sensor interface application" onclick="openLightbox(this)">
+        <img src="/images/image_6.jpg" alt="Sensor interface application">
       </div>
     </div>
 
@@ -126,13 +91,13 @@
       <p>Android app for Modbus sensor interfacing via OTG connection. Jetpack Compose UI. Real-world deployment of Android + industrial protocols.</p>
       <div class="project-stack"><span>Kotlin</span><span>Jetpack Compose</span><span>Android</span><span>Modbus</span><span>Bluetooth</span></div>
       <div class="project-gallery">
-        <img src="images/image_7.jpg" alt="Kotlin Android sensor app" onclick="openLightbox(this)">
-        <img src="images/image_8.jpg" alt="Kotlin Android sensor app UI" onclick="openLightbox(this)">
+        <img src="/images/image_7.jpg" alt="Kotlin Android sensor app">
+        <img src="/images/image_8.jpg" alt="Kotlin Android sensor app UI">
       </div>
       <div class="project-video">
-        <video controls preload="metadata" poster="images/image_7.jpg" playsinline>
-          <source src="videos/kotlin-sensor-app-demo.mp4" type="video/mp4">
-          Your browser doesn't support embedded video. <a href="videos/kotlin-sensor-app-demo.mp4">Download the demo</a>.
+        <video controls preload="metadata" poster="/images/image_7.jpg" playsinline>
+          <source src="/videos/kotlin-sensor-app-demo.mp4" type="video/mp4">
+          Your browser doesn't support embedded video. <a href="/videos/kotlin-sensor-app-demo.mp4">Download the demo</a>.
         </video>
       </div>
     </div>
@@ -466,56 +431,10 @@
   </div>
 </section>
 
-<footer>
-  <div class="footer-inner" style="display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap;text-align:center;">
-    <p class="footer-copy" style="margin:0;">JESSE JACOBS &mdash; ROLLESTON, CANTERBURY, NZ</p>
-    <span style="color:var(--muted2);font-size:0.72rem;">·</span>
-    <button onclick="document.getElementById('privacy-modal').classList.add('open')" style="background:none;border:none;font-family:var(--mono);font-size:0.72rem;color:var(--muted2);cursor:pointer;text-decoration:none;padding:0;">Privacy Policy</button>
-  </div>
-</footer>
+  <Footer />
+  <Chatbot />
+  <PrivacyModal />
+  <Lightbox />
 
-</div>
-
-<!-- CHATBOT -->
-<button id="ss-chat-toggle" aria-label="Ask about Jesse">
-  <svg class="chat-icon" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
-  <svg class="close-icon" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
-</button>
-<div id="ss-chat-panel" role="dialog" aria-label="Portfolio assistant">
-  <div class="ss-chat-header">
-    <div class="ss-chat-dot"></div>
-    <span class="ss-chat-title">Ask about Jesse</span>
-    <span class="ss-chat-sub">AI assistant</span>
-  </div>
-  <div class="ss-chat-messages" id="ss-chat-messages">
-    <div class="ss-msg ss-msg-bot">Hi! Ask me about Jesse's skills, projects, experience, or background.</div>
-  </div>
-  <div class="ss-chat-input-row">
-    <textarea id="ss-chat-input" placeholder="Ask a question…" rows="1" maxlength="400"></textarea>
-    <button id="ss-chat-send" aria-label="Send"><svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></button>
-  </div>
-  <div class="ss-chat-disclaimer">Answers questions about Jesse's portfolio only.</div>
-</div>
-</div>
-
-<!-- PRIVACY MODAL -->
-<div id="privacy-modal" onclick="if(event.target===this)this.classList.remove('open')">
-  <div class="privacy-box">
-    <button class="privacy-close" onclick="document.getElementById('privacy-modal').classList.remove('open')">✕</button>
-    <h3>Privacy Policy</h3>
-    <p>This portfolio site does not use cookies or analytics tracking. No personal data is collected or stored.</p>
-    <p>The AI chatbot sends your questions to Anthropic's API (via a proxy) to generate responses. No conversation history is stored.</p>
-    <p>Contact: use the email link on this page.</p>
-  </div>
-</div>
-
-<!-- LIGHTBOX -->
-<div id="lightbox" onclick="if(event.target===this)closeLightbox()" role="dialog" aria-modal="true">
-  <button id="lb-close" onclick="closeLightbox()" aria-label="Close">✕</button>
-  <img id="lb-img" src="" alt="">
-</div>
-
-<script src="script.js"></script>
-
-</body>
-</html>
+  <script>import '../scripts/client.js';</script>
+</Base>

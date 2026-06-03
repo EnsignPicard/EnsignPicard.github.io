@@ -1,0 +1,14 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base>
+  <section style="min-height:70vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:1rem">
+    <span class="label">Error 404</span>
+    <h1 style="font-size:clamp(2.5rem,8vw,4rem)">Page <em>not found</em></h1>
+    <p class="lead" style="max-width:420px">That page doesn't exist or has moved. Let's get you back on track.</p>
+    <div class="hero-actions" style="justify-content:center">
+      <a href="/" class="btn btn-primary">← Back home</a>
+      <a href="/#contact" class="btn btn-outline">Get in touch</a>
+    </div>
+  </section>
+</Base>
