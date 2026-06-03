@@ -19,7 +19,7 @@
       --bg:#080c08; --surface:#0f140f; --surface2:#141a14;
       --border:rgba(255,255,255,0.06); --green:#4caf7d;
       --green-dim:rgba(76,175,125,0.10); --green-border:rgba(76,175,125,0.22);
-      --text:#f0f4f0; --muted:#8a9a8a; --muted2:#6a7a6a;
+      --text:#f0f4f0; --muted:#8a9a8a; --muted2:#808f80;
       --mono:'DM Mono',monospace; --sans:'Sora',sans-serif;
     }
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
