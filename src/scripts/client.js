@@ -2,9 +2,15 @@
 const navToggle = document.getElementById('nav-toggle');
 const navLinks = document.getElementById('nav-links');
 if (navToggle && navLinks) {
-  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navToggle.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', String(open));
+  });
   navLinks.querySelectorAll('a').forEach(a =>
-    a.addEventListener('click', () => navLinks.classList.remove('open'))
+    a.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    })
   );
 }
 
@@ -148,12 +154,12 @@ const WORKER_URL = 'https://jessejacobs.nz/api/chat';
       t.remove();
       const reply = data.content && data.content[0] && data.content[0].text
         ? data.content[0].text
-        : 'Sorry, something went wrong. Use the email link to contact Jesse directly.';
+        : 'Sorry, something went wrong. You can reach Jesse via the contact section below.';
       history.push({ role: 'assistant', content: reply });
       addMsg(reply, 'bot');
     } catch (err) {
       t.remove();
-      addMsg('Could not connect. Use the email link to contact Jesse.', 'bot');
+      addMsg('Could not connect. You can reach Jesse via the contact section below.', 'bot');
     }
     isLoading = false; sendBtn.disabled = false; input.disabled = false;
     input.focus();
