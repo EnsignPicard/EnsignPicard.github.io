@@ -13,7 +13,7 @@ import Lightbox from '../components/Lightbox.astro';
   <div class="hero-text">
     <span class="label">Available for work</span>
     <h1>Jesse<br><em>Jacobs</em></h1>
-    <p class="terminal-line">software developer</p>
+    <p class="terminal-line">software developer — with a focus on embedded systems and data science</p>
     <p class="lead">Software developer with two years building production software at an IoT hardware startup — Java desktop apps, Kotlin/Android, backend integrations, and automation. AWS Certified, with a Graduate Diploma in Computer Science.</p>
 
     <div class="hero-badges">
@@ -78,8 +78,8 @@ import Lightbox from '../components/Lightbox.astro';
     <div class="project-card">
       <div class="project-icon">📡</div>
       <h3>Sensor Interface (Prototype)</h3>
-      <p>Cross-platform desktop app for Yosemitech Y510 turbidity sensors. Real-time Modbus RTU over serial. Qt GUI. Runs on Linux and Windows.</p>
-      <div class="project-stack"><span>C++</span><span>Qt Framework</span><span>libmodbus</span><span>CMake</span><span>Modbus RTU</span></div>
+      <p>Cross-platform desktop app for Yosemitech Y510 turbidity sensors. Real-time Modbus RTU over serial. Qt GUI. Runs on Linux and Windows. Part of an ongoing embedded/industrial-protocol focus, alongside dedicated ESP32 firmware work below.</p>
+      <div class="project-stack"><span>C++</span><span>Qt Framework</span><span>libmodbus</span><span>CMake</span><span>Modbus RTU</span><span>Industrial Protocols</span><span>Embedded</span></div>
       <div class="project-gallery">
         <img src="/images/image_6.webp" alt="Sensor interface application" loading="lazy" decoding="async">
       </div>
@@ -88,8 +88,8 @@ import Lightbox from '../components/Lightbox.astro';
     <div class="project-card">
       <div class="project-icon">📱</div>
       <h3>Kotlin Compose Modbus Sensor App</h3>
-      <p>Android app for Modbus sensor interfacing via OTG connection. Jetpack Compose UI. Real-world deployment of Android + industrial protocols.</p>
-      <div class="project-stack"><span>Kotlin</span><span>Jetpack Compose</span><span>Android</span><span>Modbus</span><span>Bluetooth</span></div>
+      <p>Android app for Modbus sensor interfacing via OTG connection. Jetpack Compose UI. Real-world deployment of Android + industrial protocols. Part of an ongoing embedded/industrial-protocol focus, alongside dedicated ESP32 firmware work below.</p>
+      <div class="project-stack"><span>Kotlin</span><span>Jetpack Compose</span><span>Android</span><span>Modbus</span><span>Bluetooth</span><span>Industrial Protocols</span><span>Embedded</span></div>
       <div class="project-gallery">
         <img src="/images/image_7.webp" alt="Kotlin Android sensor app" loading="lazy" decoding="async">
         <img src="/images/image_8.webp" alt="Kotlin Android sensor app UI" loading="lazy" decoding="async">
@@ -100,6 +100,34 @@ import Lightbox from '../components/Lightbox.astro';
           Your browser doesn't support embedded video. <a href="/videos/kotlin-sensor-app-demo.mp4">Download the demo</a>.
         </video>
       </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-icon">🌡️</div>
+      <h3>ESP32 Environmental Monitor</h3>
+      <p>Battery-powered environmental sensor node built on ESP-IDF. Reads temperature/pressure via DHT22 + BMP280, displays live readings on an SSD1306 OLED, and publishes to MQTT every 30 seconds. Deep-sleeps between cycles for long battery life.</p>
+      <div class="project-stack"><span>ESP32</span><span>ESP-IDF</span><span>C</span><span>I2C</span><span>MQTT</span><span>Deep Sleep</span><span>Embedded</span></div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-icon">🏠</div>
+      <h3>ESP32 Home Automation Node</h3>
+      <p>MQTT-controlled relay node built on ESP-IDF. Switches mains-connected devices, reports state back over MQTT, and integrates with Home Assistant.</p>
+      <div class="project-stack"><span>ESP32</span><span>ESP-IDF</span><span>C</span><span>MQTT</span><span>Home Assistant</span><span>Embedded</span></div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-icon">🚨</div>
+      <h3>ESP32 Motion-Triggered Alert System</h3>
+      <p>Interrupt-driven motion sensing on ESP-IDF. HC-SR04/PIR sensor triggers an ISR that fires a notification, built as a hands-on exercise in edge-triggered interrupts and real-time response.</p>
+      <div class="project-stack"><span>ESP32</span><span>ESP-IDF</span><span>C</span><span>Interrupts/ISRs</span><span>GPIO</span><span>Embedded</span></div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-icon">💾</div>
+      <h3>ESP32 Data Logger</h3>
+      <p>Multi-sensor data logger built on ESP-IDF. Logs timestamped readings to an SD card over SPI, then syncs over WiFi whenever the device is in range.</p>
+      <div class="project-stack"><span>ESP32</span><span>ESP-IDF</span><span>C</span><span>SPI</span><span>WiFi</span><span>Embedded</span></div>
     </div>
 
     <div class="project-card">
@@ -137,9 +165,13 @@ import Lightbox from '../components/Lightbox.astro';
     <div class="skill-group"><h3>Languages</h3><div class="skill-tags"><span class="skill-tag">Java</span><span class="skill-tag">Kotlin</span><span class="skill-tag">Python</span><span class="skill-tag">C/C++</span><span class="skill-tag">TypeScript</span><span class="skill-tag">Bash</span><span class="skill-tag">SQL</span></div></div>
     <div class="skill-group"><h3>Mobile &amp; Android</h3><div class="skill-tags"><span class="skill-tag">Android Development</span><span class="skill-tag">Jetpack Compose</span><span class="skill-tag">Gradle</span><span class="skill-tag">Maven</span></div></div>
     <div class="skill-group"><h3>Web &amp; Backend</h3><div class="skill-tags"><span class="skill-tag">Astro</span><span class="skill-tag">React.js</span><span class="skill-tag">Next.js</span><span class="skill-tag">Spring Boot</span><span class="skill-tag">FastAPI</span><span class="skill-tag">REST APIs</span></div></div>
-    <div class="skill-group"><h3>Cloud &amp; DevOps</h3><div class="skill-tags"><span class="skill-tag">AWS</span><span class="skill-tag">Docker</span><span class="skill-tag">Git</span><span class="skill-tag">CI/CD</span><span class="skill-tag">JUnit</span><span class="skill-tag">Mockito</span></div></div>
+    <div class="skill-group"><h3>Cloud &amp; DevOps</h3><div class="skill-tags"><span class="skill-tag">AWS</span><span class="skill-tag">Lambda</span><span class="skill-tag">DynamoDB</span><span class="skill-tag">API Gateway</span><span class="skill-tag">CodePipeline</span><span class="skill-tag">Docker</span><span class="skill-tag">Git</span><span class="skill-tag">CI/CD</span><span class="skill-tag">JUnit</span><span class="skill-tag">Mockito</span></div></div>
     <div class="skill-group"><h3>Data &amp; Databases</h3><div class="skill-tags"><span class="skill-tag">PostgreSQL</span><span class="skill-tag">MongoDB</span><span class="skill-tag">Data Analysis</span><span class="skill-tag">Data Structures</span></div></div>
     <div class="skill-group"><h3>AI &amp; ML</h3><div class="skill-tags"><span class="skill-tag">RAG</span><span class="skill-tag">PyTorch</span><span class="skill-tag">Fuzzy Logic</span><span class="skill-tag">A* Search</span><span class="skill-tag">NLP</span><span class="skill-tag">Deep Learning</span><span class="skill-tag">Transfer Learning</span></div></div>
+    <div class="skill-group"><h3>Embedded &amp; Firmware</h3><div class="skill-tags"><span class="skill-tag">ESP32</span><span class="skill-tag">ESP-IDF</span><span class="skill-tag">Bare-metal C</span><span class="skill-tag">FreeRTOS</span><span class="skill-tag">Interrupts/ISRs</span><span class="skill-tag">GPIO</span><span class="skill-tag">PWM</span><span class="skill-tag">ADC</span><span class="skill-tag">Deep Sleep &amp; Power Management</span><span class="skill-tag">OTA Updates</span></div></div>
+    <div class="skill-group"><h3>Protocols &amp; Hardware Interfaces</h3><div class="skill-tags"><span class="skill-tag">Modbus RTU</span><span class="skill-tag">UART/Serial</span><span class="skill-tag">I2C</span><span class="skill-tag">SPI</span><span class="skill-tag">1-Wire</span><span class="skill-tag">Bluetooth/BLE</span><span class="skill-tag">MQTT</span><span class="skill-tag">WiFi/HTTP</span></div></div>
+    <div class="skill-group"><h3>Hardware / Hands-on</h3><div class="skill-tags"><span class="skill-tag">ESD Soldering</span><span class="skill-tag">CNC</span><span class="skill-tag">Laser Engraver</span><span class="skill-tag">3D Printing</span><span class="skill-tag">Fusion 360</span><span class="skill-tag">OpenSCAD</span><span class="skill-tag">Sensor Calibration</span><span class="skill-tag">Device Provisioning &amp; Firmware Flashing</span><span class="skill-tag">Logic-Analyser Debugging</span><span class="skill-tag">Mechanical Troubleshooting</span></div></div>
+    <div class="skill-group"><h3>Spoken Languages</h3><div class="skill-tags"><span class="skill-tag">English (Native)</span><span class="skill-tag">Russian (Working Proficiency)</span></div></div>
   </div>
 </section>
 
@@ -285,6 +317,9 @@ import Lightbox from '../components/Lightbox.astro';
     <div class="edu-card"><h3>Graduate Diploma — Arts (Linguistics)</h3><div class="edu-inst">Massey University</div><div class="edu-year">2018</div></div>
     <div class="edu-card"><h3>Bachelor of Arts — Mathematics</h3><div class="edu-inst">Massey University</div><div class="edu-year">2013 – 2017</div></div>
     <div class="edu-card"><h3>AWS Certified Cloud Practitioner</h3><div class="edu-inst">Amazon Web Services</div><div class="edu-year">2025</div></div>
+    <div class="edu-card"><h3>Class 5 Driver Licence — F, W, T, R, D Endorsements</h3><div class="edu-inst">Waka Kotahi NZ Transport Agency</div></div>
+    <div class="edu-card"><h3>Forklift Operator Certificate (OSH)</h3></div>
+    <div class="edu-card"><h3>Site Safe Passport</h3></div>
   </div>
 
   <button class="courses-toggle-btn" id="courses-btn">📚 Show all 32 university courses</button>
@@ -331,6 +366,15 @@ import Lightbox from '../components/Lightbox.astro';
 
 <hr class="divider">
 
+<!-- PERSONAL -->
+<section id="personal">
+  <span class="label">Outside of work</span>
+  <h2>Personal <em>interests</em></h2>
+  <p class="lead">Tramping, guitar, bow hunting/archery, fly fishing, motorcycle rides, and sci-fi TV.</p>
+</section>
+
+<hr class="divider">
+
 <!-- GITHUB ACTIVITY -->
 <section id="github">
   <span class="label">Open source</span>
@@ -348,45 +392,24 @@ import Lightbox from '../components/Lightbox.astro';
 <hr class="divider">
 
 <!-- SKILLS IN PROGRESS -->
+<!--
+  Section emptied: FastAI, AWS Developer Associate, and Spring Boot are now
+  all complete and folded into the main Skills section above (AI & ML,
+  Cloud & DevOps, and Web & Backend respectively). Re-add cards here when
+  a new skill is actively in progress.
+-->
+<!--
 <section id="learning">
   <span class="label">What's next</span>
   <h2>Skills <em>in progress</em></h2>
   <p class="lead">Current skills I'm actively developing and what's planned next.</p>
   <div class="skills-progress-grid">
-
-
-
-    <div class="skill-progress-item">
-      <div class="skill-progress-header">
-        <span class="skill-progress-name">FastAI — Practical Deep Learning</span>
-        <span class="skill-progress-status status-active">Active</span>
-      </div>
-      <div class="skill-progress-bar-bg"><div class="skill-progress-bar" style="width:20%"></div></div>
-      <p class="skill-progress-note">Working through fast.ai course.</p>
-    </div>
-
-    <div class="skill-progress-item">
-      <div class="skill-progress-header">
-        <span class="skill-progress-name">AWS Developer Associate</span>
-        <span class="skill-progress-status status-active">Active</span>
-      </div>
-      <div class="skill-progress-bar-bg"><div class="skill-progress-bar" style="width:15%"></div></div>
-      <p class="skill-progress-note">Building on Cloud Practitioner cert. Lambda, DynamoDB, API Gateway, CodePipeline.</p>
-    </div>
-
-    <div class="skill-progress-item">
-      <div class="skill-progress-header">
-        <span class="skill-progress-name">Spring Boot</span>
-        <span class="skill-progress-status status-active">Active</span>
-      </div>
-      <div class="skill-progress-bar-bg"><div class="skill-progress-bar" style="width:30%"></div></div>
-      <p class="skill-progress-note">Building on strong Java foundations. Working through a dedicated Spring Boot course.</p>
-    </div>
-
   </div>
 </section>
 
 <hr class="divider">
+-->
+
 
 <!-- BLOG / NOTES — powered by Sanity CMS -->
 
